@@ -1,0 +1,10 @@
+const express = require('express')
+const userControllers = require('../controllers/usersControllers')
+const router = express.Router()
+router.use(express.json())
+router.get('/users',userControllers.getUsers)
+    .post('/users:signin',userControllers.getUser)
+    .post('/users',userControllers.addUser)
+    .put('/users',userControllers.updateUsers)
+    .delete('/users',userControllers.deleteUsers)
+module.exports = ()=>router
